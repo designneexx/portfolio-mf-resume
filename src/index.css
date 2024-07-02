@@ -1,0 +1,85 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* width */
+::-webkit-scrollbar {
+    @apply w-[4px];
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+ 
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+#portfolio-container {
+    font-family: 'Inter';
+    @apply text-text-primary-950;
+}
+
+.btn {
+    @apply bg-brand-500 rounded-full uppercase text-text-primary-950 text-[1rem] font-bold py-[0.5rem] px-[1.75rem];
+}
+
+.btn-lg {
+    @apply uppercase rounded-full bg-brand-500 text-text-primary-950 text-[1rem] px-[2rem] py-[1rem] max-md:py-[0.75rem] max-md:px-[1.25rem] font-bold;
+}
+
+.typography-xl {
+    @apply font-bold text-[2rem] leading-[1.236];
+}
+
+.typography-xxl {
+    @apply font-bold text-[2.25rem] leading-[1.22] max-md:text-[2rem];
+}
+
+.typography-xlg {
+    @apply leading-[1.236] font-medium text-[1.25rem];
+}
+
+.typography-lg {
+    @apply leading-[1.236] font-medium text-[1.25rem];
+}
+
+.typography-lg-regular {
+    @apply leading-[2.4rem] text-[1.25rem];
+}
+
+.typography-md {
+    @apply text-[1rem];
+}
+
+.typography-sm {
+    @apply text-[0.875rem] leading-[1.2rem];
+}
+
+.badge {
+    @apply bg-brand-500 py-[0.25rem] px-[0.5rem] text-text-primary-950 text-[1rem] rounded-md;
+}
+
+.badge-sm {
+    @apply bg-brand-500 py-[0.25rem] px-[0.5rem] text-text-primary-950 text-[0.875rem] rounded-md;
+}
+
+.divider-light {
+    @apply w-full h-[2px] bg-primary-bg-lightness-100;
+}
+
+.divider-dark {
+    @apply w-full h-[2px] bg-primary-bg-lightness-900;
+}
