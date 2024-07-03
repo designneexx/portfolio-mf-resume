@@ -13,13 +13,13 @@ function HeroComponent(_props: Record<string, unknown>, ref: ForwardedRef<HTMLDi
     return (
         <section
             className={classNames(
-                'shadow-primary max-md:p-[3rem] grid lg:grid-cols-2 max-lg:grid-cols-1',
+                'shadow-primary grid grid-cols-2 max-2xl:grid-cols-1',
                 getColorMode('bg-white-50', 'bg-white-950')
             )}
             id={SectionIdentifier.Home}
             ref={ref}
         >
-            <div className='p-[3.75rem]'>
+            <div className='md:p-[3.75rem] p-[2rem]'>
                 <h1
                     className={classNames(
                         'typography-xxl',
@@ -47,7 +47,7 @@ function HeroComponent(_props: Record<string, unknown>, ref: ForwardedRef<HTMLDi
             </div>
             <div
                 className={classNames(
-                    'p-[3.75rem] flex items-center justify-center max-lg:-order-1',
+                    'md:p-[3.75rem] p-[2rem] flex items-center justify-center max-lg:-order-1',
                     getColorMode('', 'bg-shark-950')
                 )}
             >

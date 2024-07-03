@@ -42,10 +42,10 @@ function ContactComponent(_props: Record<string, unknown>, ref: ForwardedRef<HTM
             ref={ref}
             title='Контакты'
         >
-            <section className='grid grid-cols-[minmax(50%,1fr),minmax(370px,max-content)] w-full gap-[1.25rem] mt-[3rem]'>
+            <section className='grid 2xl:grid-cols-[minmax(50%,1fr),minmax(370px,max-content)] grid-cols-1 w-full gap-[1.25rem] mt-[3rem]'>
                 <article
                     className={classNames(
-                        'p-[2.5rem] w-full shadow-primary',
+                        'sm:p-[2.5rem] p-[2rem] w-full shadow-primary',
                         getColorMode('bg-white-50', 'bg-white-950')
                     )}
                 >
@@ -168,7 +168,7 @@ function ContactComponent(_props: Record<string, unknown>, ref: ForwardedRef<HTM
                             <MapPin height={18} width={18} />
                         </span>
                         <div className='flex flex-col gap-[1rem] w-full'>
-                            <div className='flex justify-between items-center gap-[1.25rem]'>
+                            <div className='flex max-sm:flex-col justify-between items-center sm:gap-[1.25rem] gap-[0.25rem]'>
                                 <p
                                     className={classNames(
                                         'typography-lg font-medium',
@@ -186,7 +186,7 @@ function ContactComponent(_props: Record<string, unknown>, ref: ForwardedRef<HTM
                                     {citizenship}
                                 </p>
                             </div>
-                            <div className='flex justify-between items-center'>
+                            <div className='flex max-sm:flex-col justify-between items-center sm:gap-[1.25rem] gap-[0.25rem]'>
                                 <p
                                     className={classNames(
                                         'typography-lg font-medium',
@@ -216,7 +216,7 @@ function ContactComponent(_props: Record<string, unknown>, ref: ForwardedRef<HTM
                             <Navigation height={18} width={18} />
                         </span>
                         <div className='flex flex-col gap-[1rem] w-full'>
-                            <div className='flex justify-between items-center gap-[1.25rem]'>
+                            <div className='flex max-sm:flex-col justify-between items-center sm:gap-[1.25rem] gap-[0.25rem]'>
                                 <p
                                     className={classNames(
                                         'typography-lg font-medium',
@@ -225,16 +225,17 @@ function ContactComponent(_props: Record<string, unknown>, ref: ForwardedRef<HTM
                                 >
                                     Email
                                 </p>
-                                <p
+                                <a
                                     className={classNames(
                                         'typography-md',
                                         getColorMode('text-text-primary-950', 'text-white-300')
                                     )}
+                                    href={`mailto:${email}`}
                                 >
                                     {email}
-                                </p>
+                                </a>
                             </div>
-                            <div className='flex justify-between items-center'>
+                            <div className='flex max-sm:flex-col justify-between items-center sm:gap-[1.25rem] gap-[0.25rem]'>
                                 <p
                                     className={classNames(
                                         'typography-lg font-medium',

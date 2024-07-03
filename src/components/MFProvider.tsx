@@ -26,6 +26,7 @@ interface MFProviderProps {
 }
 
 function MFProviderComponent({ notificationService, userStore }: MFProviderProps) {
+    console.log('???');
     return (
         <AppRepositoryProvider notificationService={notificationService} userStore={userStore}>
             <ThemeProvider>

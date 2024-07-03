@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { observer } from 'mobx-react-lite';
-import ThemeChangeIcon from 'src/assets/svg/logo.svg';
+import { Sun } from 'react-feather';
 import { ICONS_MAP, SECTION_IDENTIFIERS } from 'src/consts/menu';
 import { useAppStores } from 'src/hooks/useAppStores';
 import { useColorMode } from 'src/hooks/useColorMode';
@@ -14,12 +14,18 @@ export const RightPanel = observer(() => {
     return (
         <div
             className={classNames(
-                'w-[108px] h-full py-[5.2rem] max-lg:hidden grid grid-cols-[100%] grid-rows-[max-content,1fr] items-center justify-center',
+                'w-[108px] h-full py-[5.2rem] max-xl:hidden grid grid-cols-[100%] grid-rows-[max-content,1fr] items-center justify-center',
                 getColorMode('bg-white-50', 'bg-white-950')
             )}
         >
-            <button className={classNames('flex justify-center')} onClick={toggleTheme}>
-                <ThemeChangeIcon
+            <button
+                className={classNames(
+                    'flex justify-center',
+                    getColorMode('text-text-primary-950', 'text-text-primary-50')
+                )}
+                onClick={toggleTheme}
+            >
+                <Sun
                     className={getColorMode('fill-text-primary-950', 'fill-text-primary-50')}
                     height={30}
                     width={30}

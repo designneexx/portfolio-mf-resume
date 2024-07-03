@@ -8,6 +8,7 @@ import { Hero } from 'src/components/Hero';
 import { WorkExperience } from 'src/components/WorkExperience';
 import { useAppStores } from 'src/hooks/useAppStores';
 import { useConst } from 'src/hooks/useConst';
+import { usePortfolio } from 'src/hooks/usePortfolio';
 import { SectionIdentifier } from 'src/types/sectionIdentifiers';
 
 function isIntersecting(entry: IntersectionObserverEntry) {
@@ -37,6 +38,7 @@ function generateThreshold(step: number): number[] {
 
 export function Home() {
     const { uiStore } = useAppStores();
+    const { educationList, jobExperienceList, testsOfExamsOrTraining } = usePortfolio();
     const { setActiveIds } = uiStore;
     const containerRef = useRef<HTMLDivElement>(null);
     const heroRef = useRef<HTMLDivElement>(null);
@@ -115,9 +117,9 @@ export function Home() {
     return (
         <>
             <Hero ref={heroRef} />
-            <WorkExperience ref={workExperienceRef} />
-            <Education ref={educationRef} />
-            <Exams ref={examRef} />
+            {jobExperienceList.length > 0 && <WorkExperience ref={workExperienceRef} />}
+            {educationList.length > 0 && <Education ref={educationRef} />}
+            {testsOfExamsOrTraining.length > 0 && <Exams ref={examRef} />}
             <Blog ref={blogRef} />
             <Contact ref={contactRef} />
             <Footer />

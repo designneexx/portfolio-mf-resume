@@ -27,9 +27,9 @@ export const LeftPanel = observer(() => {
     return (
         <article
             className={classNames(
-                'py-[1.5rem] w-[350px] grid grid-cols-1 grid-rows-[max-content,1fr,max-content] overflow-hidden items-center h-full transition-transform max-lg:pt-0 max-lg:fixed max-lg:left-0 max-lg:top-0 max-lg:z-20',
+                'py-[1.5rem] w-[350px] grid grid-cols-1 grid-rows-[max-content,1fr,max-content] overflow-hidden items-center h-full transition-transform max-xl:pt-0 max-xl:fixed max-xl:left-0 max-xl:top-0 max-xl:z-20',
                 {
-                    'max-lg:-translate-x-full': !isOpenSidebar
+                    'max-xl:-translate-x-full': !isOpenSidebar
                 },
                 getColorMode('bg-white-50', 'bg-white-950')
             )}
@@ -38,7 +38,7 @@ export const LeftPanel = observer(() => {
             <div className='w-full flex flex-col items-center px-[1.75rem]'>
                 <button
                     className={classNames(
-                        'w-full h-[55px] flex items-center justify-start typography-md lg:hidden',
+                        'w-full h-[55px] flex items-center justify-start typography-md xl:hidden',
                         getColorMode('', 'text-text-primary-50')
                     )}
                     onClick={closeSidebar}
@@ -48,7 +48,7 @@ export const LeftPanel = observer(() => {
                 </button>
 
                 <Avatar
-                    className='max-md:w-[75px] max-md:h-[75px] overflow-hidden'
+                    className='max-md:w-[125px] max-md:h-[125px] overflow-hidden'
                     name={fullName}
                     src={avatarPath}
                 />
@@ -70,22 +70,24 @@ export const LeftPanel = observer(() => {
                 >
                     {profession}
                 </p>
-                <p
+                <a
                     className={classNames(
                         'typography-md mt-[1rem] leading-[1]',
                         getColorMode('text-text-secondary-500', 'text-text-secondary-200')
                     )}
+                    href={`mailto:${email}`}
                 >
                     {email}
-                </p>
-                <p
+                </a>
+                <a
                     className={classNames(
                         'typography-md mt-[1rem] leading-[1]',
                         getColorMode('text-text-secondary-500', 'text-text-secondary-200')
                     )}
+                    href={`tel:${phone}`}
                 >
                     {phone}
-                </p>
+                </a>
 
                 <div
                     className={classNames(

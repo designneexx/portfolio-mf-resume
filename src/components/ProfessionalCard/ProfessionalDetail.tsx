@@ -33,7 +33,7 @@ export const ProfessionalDetail = observer(
         return (
             <div {...props} className={classNames('pt-[1.75rem] pb-[1.25rem]', className)}>
                 <div>
-                    <div className='flex justify-between items-start gap-[2rem]'>
+                    <div className='flex xl:flex-row flex-col justify-between xl:gap-[2rem] gap-[0.5rem] items-start'>
                         <div className='flex flex-col gap-[0.5rem]'>
                             <h5
                                 className={classNames(

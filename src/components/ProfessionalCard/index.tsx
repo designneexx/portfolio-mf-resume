@@ -20,7 +20,7 @@ export const ProfessionalCard = observer(({ className, list, ...props }: Profess
         <article
             {...props}
             className={classNames(
-                'py-[3.6rem] shadow-primary w-full px-[3.7rem]',
+                'md:py-[3.6rem] shadow-primary w-full md:px-[3.7rem] py-[2rem] px-[2rem]',
                 getColorMode('bg-white-50', 'bg-white-950'),
                 className
             )}
