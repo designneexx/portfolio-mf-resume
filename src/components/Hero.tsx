@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import { observer } from 'mobx-react-lite';
-import { ForwardedRef, forwardRef } from 'react';
+import { ForwardedRef, forwardRef, useEffect, useState } from 'react';
+import defaultImage from 'src/assets/images/ai-chip-artificial-intelligence-future-technology-innovation.jpg';
 import { useColorMode } from 'src/hooks/useColorMode';
 import { usePortfolio } from 'src/hooks/usePortfolio';
 import { SectionIdentifier } from 'src/types/sectionIdentifiers';
@@ -9,6 +10,15 @@ function HeroComponent(_props: Record<string, unknown>, ref: ForwardedRef<HTMLDi
     const getColorMode = useColorMode();
     const portfolio = usePortfolio();
     const { aboutMe, avatarPath, fullName, mainDegreeOfQualification } = portfolio;
+    const [imageSrc, setImageSrc] = useState(avatarPath);
+
+    const onError = () => {
+        setImageSrc(defaultImage);
+    };
+
+    useEffect(() => {
+        setImageSrc(avatarPath);
+    }, [avatarPath]);
 
     return (
         <section
@@ -48,10 +58,10 @@ function HeroComponent(_props: Record<string, unknown>, ref: ForwardedRef<HTMLDi
             <div
                 className={classNames(
                     'md:p-[3.75rem] p-[2rem] flex items-center justify-center max-lg:-order-1',
-                    getColorMode('', 'bg-shark-950')
+                    getColorMode('bg-white-100', 'bg-shark-950')
                 )}
             >
-                <img src={avatarPath} />
+                <img onError={onError} src={imageSrc || defaultImage} />
             </div>
         </section>
     );

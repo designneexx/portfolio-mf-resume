@@ -5,8 +5,8 @@ import { Home } from 'src/pages/Home';
 import { NotificationService } from 'src/services/notificationService';
 import { UserStore } from 'src/store/userStore';
 import { AppRepositoryProvider } from './AppRepository';
-import { ThemeProvider } from './AppStoresProvider';
 import { MainLayout } from './MainLayout';
+import { ThemeProvider } from './ThemeProvider';
 
 import '@fontsource/inter/cyrillic.css';
 import '@fontsource/inter/100.css';
@@ -26,7 +26,6 @@ interface MFProviderProps {
 }
 
 function MFProviderComponent({ notificationService, userStore }: MFProviderProps) {
-    console.log('???');
     return (
         <AppRepositoryProvider notificationService={notificationService} userStore={userStore}>
             <ThemeProvider>

@@ -10,10 +10,13 @@ import { LeftPanel } from './LeftPanel';
 import { RightPanel } from './RightPanel';
 
 export const MainLayout = observer(({ children }: PropsWithChildren<unknown>) => {
-    const { uiStore } = useAppStores();
+    const { portfolioStore, uiStore } = useAppStores();
+    const { portfolio } = portfolioStore;
     const { isOpenSidebar } = uiStore;
     const getColorMode = useColorMode();
     const isLessLg = useMediaQuery(`(max-width: ${breakpointsScreens.xl})`);
+
+    if (!portfolio) return null;
 
     return (
         <div

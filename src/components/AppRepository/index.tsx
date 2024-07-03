@@ -65,7 +65,7 @@ function AppRepositoryProviderComponent({
 
     return (
         <AppRepositoryContext.Provider value={appRepository}>
-            {portfolioStore.portfolio ? children : null}
+            {children}
         </AppRepositoryContext.Provider>
     );
 }

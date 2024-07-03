@@ -1,5 +1,5 @@
 import { makeAutoObservable } from 'mobx';
-import { COLOR_MODE_KEY } from 'src/components/AppStoresProvider';
+import { COLOR_MODE_KEY } from 'src/components/ThemeProvider';
 import { SectionIdentifier } from 'src/types/sectionIdentifiers';
 
 export enum ColorMode {

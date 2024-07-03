@@ -1,7 +1,8 @@
 import classNames from 'classnames';
 import { observer } from 'mobx-react-lite';
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { X } from 'react-feather';
+import defaultImage from 'src/assets/images/ai-chip-artificial-intelligence-future-technology-innovation.jpg';
 import { useAppStores } from 'src/hooks/useAppStores';
 import { useColorMode } from 'src/hooks/useColorMode';
 import { usePortfolio } from 'src/hooks/usePortfolio';
@@ -15,14 +16,23 @@ export const LeftPanel = observer(() => {
     const portfolio = usePortfolio();
     const { avatarPath, email, firstName, fullName, phone, profession, resumeUrl, surname } =
         portfolio;
+    const [imageSrc, setImageSrc] = useState(avatarPath);
     const { languages, skills } = portfolioStore;
     const { closeSidebar, isOpenSidebar } = uiStore;
 
     const getColorMode = useColorMode();
 
+    const onError = () => {
+        setImageSrc(defaultImage);
+    };
+
     useOnClickOutside(ref, () => {
         closeSidebar();
     });
+
+    useEffect(() => {
+        setImageSrc(avatarPath);
+    }, [avatarPath]);
 
     return (
         <article
@@ -50,7 +60,8 @@ export const LeftPanel = observer(() => {
                 <Avatar
                     className='max-md:w-[125px] max-md:h-[125px] overflow-hidden'
                     name={fullName}
-                    src={avatarPath}
+                    onError={onError}
+                    src={imageSrc || defaultImage}
                 />
 
                 <h5
