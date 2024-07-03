@@ -26,7 +26,7 @@ function HeroComponent(_props: Record<string, unknown>, ref: ForwardedRef<HTMLDi
                 'shadow-primary grid grid-cols-2 max-2xl:grid-cols-1',
                 getColorMode('bg-white-50', 'bg-white-950')
             )}
-            id={SectionIdentifier.Home}
+            id={SectionIdentifier.Hero}
             ref={ref}
         >
             <div className='md:p-[3.75rem] p-[2rem]'>

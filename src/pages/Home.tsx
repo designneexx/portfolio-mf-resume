@@ -53,7 +53,7 @@ export function Home() {
     function getActiveId(target: Element) {
         switch (target) {
             case heroRef.current:
-                return SectionIdentifier.Home;
+                return SectionIdentifier.Hero;
             case educationRef.current:
                 return SectionIdentifier.Education;
             case workExperienceRef.current:
@@ -65,7 +65,7 @@ export function Home() {
             case examRef.current:
                 return SectionIdentifier.Exam;
             default:
-                return SectionIdentifier.Home;
+                return SectionIdentifier.Hero;
         }
     }
 

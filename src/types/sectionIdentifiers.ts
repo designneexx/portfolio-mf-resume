@@ -3,6 +3,6 @@ export const enum SectionIdentifier {
     Contact = 'contact',
     Education = 'education',
     Exam = 'exam',
-    Home = 'home',
+    Hero = 'hero',
     WorkExperience = 'work-experience'
 }
