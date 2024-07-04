@@ -22,12 +22,17 @@ import 'src/index.css';
 
 interface MFProviderProps {
     notificationService: NotificationService;
+    resumeId?: string;
     userStore: UserStore;
 }
 
-function MFProviderComponent({ notificationService, userStore }: MFProviderProps) {
+function MFProviderComponent({ notificationService, resumeId, userStore }: MFProviderProps) {
     return (
-        <AppRepositoryProvider notificationService={notificationService} userStore={userStore}>
+        <AppRepositoryProvider
+            notificationService={notificationService}
+            resumeId={resumeId}
+            userStore={userStore}
+        >
             <ThemeProvider>
                 <MainLayout>
                     <Routes>

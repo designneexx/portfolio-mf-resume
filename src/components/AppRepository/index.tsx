@@ -23,15 +23,17 @@ const createAxiosInstance = (config?: CreateAxiosDefaults) =>
 
 interface AppRepositoryProviderProps {
     notificationService: NotificationService;
+    resumeId?: string;
     userStore: UserStore;
 }
 
 function AppRepositoryProviderComponent({
     children,
     notificationService,
+    resumeId: defaultResumeId = '',
     userStore
 }: PropsWithChildren<AppRepositoryProviderProps>) {
-    const { resumeId = '' } = useParams();
+    const { resumeId = defaultResumeId } = useParams();
     const instance = useConst(() => createAxiosInstance());
     const portfolioApi = useConst(() => createPortfolioApi(instance));
     const usersApi = useConst(() => createUsersApi(instance));
