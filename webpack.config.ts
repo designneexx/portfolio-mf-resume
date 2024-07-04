@@ -1,10 +1,9 @@
 import path from 'path';
-import Dotenv from 'dotenv-webpack';
 import ESLintPlugin from 'eslint-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import TerserWebpackPlugin from 'terser-webpack-plugin';
-import webpack from 'webpack';
+import webpack, { DefinePlugin } from 'webpack';
 import packageJSON from './package.json';
 
 import 'webpack-dev-server';
@@ -131,7 +130,9 @@ export default (env: ConfigParams, args: ConfigParams): webpack.Configuration =>
             new ESLintPlugin({
                 extensions: ['js', 'mjs', 'jsx', 'ts', 'tsx']
             }),
-            new Dotenv(),
+            new DefinePlugin({
+                BASE_API_URL: process.env.BASE_API_URL || ''
+            }),
             isProd &&
                 new MiniCssExtractPlugin({
                     chunkFilename: 'public/css/[name].[contenthash:8].chunk.css',
