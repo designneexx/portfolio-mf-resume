@@ -3,6 +3,7 @@ import { observer } from 'mobx-react-lite';
 import { Menu as MenuIcon, Sun } from 'react-feather';
 import { useAppStores } from 'src/hooks/useAppStores';
 import { useColorMode } from 'src/hooks/useColorMode';
+import { usePortfolio } from 'src/hooks/usePortfolio';
 import { Avatar } from '../Avatar';
 import { Menu } from './Menu';
 
@@ -10,6 +11,8 @@ function HeaderComponent() {
     const getColorMode = useColorMode();
     const { uiStore } = useAppStores();
     const { toggleOpenSidebar, toggleTheme } = uiStore;
+    const portfolio = usePortfolio();
+    const { firstName } = portfolio;
 
     return (
         <header
@@ -32,7 +35,7 @@ function HeaderComponent() {
                         getColorMode('', 'text-text-primary-50')
                     )}
                 >
-                    Михаил
+                    {firstName}
                 </p>
             </div>
             <div className='flex gap-[1.5rem] items-center'>
